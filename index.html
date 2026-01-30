@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Products Company</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -18,16 +21,37 @@
 
   <main>
     <section class="hero">
-      <h2>Nous créons des produits digitaux utiles et élégants</h2>
+      <h2>Nous créons des produits digitaux <span class="highlight">utiles et élégants</span></h2>
       <p>Applications, outils en ligne, plateformes e-learning.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
+        <a href="#services" class="btn btn-secondary">Nos services</a>
+      </div>
+      <div class="hero-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+      </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <h3>Nos services</h3>
       <ul>
-        <li>Produits SaaS</li>
-        <li>Applications web</li>
-        <li>Solutions e-learning</li>
+        <li>
+          <div class="service-icon">💼</div>
+          <h4>Produits SaaS</h4>
+          <p>Solutions logicielles en tant que service, scalables et performantes.</p>
+        </li>
+        <li>
+          <div class="service-icon">⚡</div>
+          <h4>Applications web</h4>
+          <p>Applications web modernes, rapides et intuitives.</p>
+        </li>
+        <li>
+          <div class="service-icon">🎓</div>
+          <h4>Solutions e-learning</h4>
+          <p>Plateformes de formation en ligne engageantes.</p>
+        </li>
       </ul>
     </section>
   </main>
