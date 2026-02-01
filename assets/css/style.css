@@ -261,7 +261,7 @@ main {
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: var(--dark);
   color: var(--white);
   box-shadow: var(--shadow-md);
 }
