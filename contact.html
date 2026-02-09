@@ -21,35 +21,85 @@
 
   <main>
     <section class="contact">
-      <form name="contact"
-            method="POST"
-            data-netlify="true">
-
-        <input type="hidden" name="form-name" value="contact" />
+      <form id="contactForm">
 
         <label>
-          Nom
-          <input type="text" name="name" required />
+          Nom *
+          <input type="text" name="name" id="name" required />
+        </label>
+        
+        <label>
+          Motif de contact : *
+          <select id="prestations" name="prestations" required>
+            <option value="">Sélectionner</option>
+            <option value="renseignement">Renseignements</option>
+            <option value="offre_essentielle">Offre Essentiel</option>
+            <option value="offre_croissance">Offre Croissance</option>
+            <option value="offre_visibilité_maximale">Offre Visibilité Maximale</option>
+            <option value="optimisation">Optimisation Google Business</option>
+            <option value="automatisation">Automatisation</option>
+            <option value="creation_site">Création de site internet sur mesure</option>
+          </select>
+        </label>
+        
+        <label>
+          Email *
+          <input type="email" name="email" id="email" required />
         </label>
 
         <label>
-          Email
-          <input type="email" name="email" required />
+          Numéro de téléphone *
+          <input type="tel" name="phone" id="phone" inputmode="numeric" required>
         </label>
 
         <label>
-          Message
-          <textarea name="message" required></textarea>
+          Message *
+          <textarea name="message" id="message" required></textarea>
         </label>
 
         <button type="submit">Envoyer</button>
       </form>
+      <div class="phrase-simple">
+          <p>* signifie que la réponse est obligatoire pour l'envoi du formulaire</p>
+        </div>
     </section>
   </main>
 
   <footer class="footer">
     <p>© 2026 – Digital Studio</p>
   </footer>
+
+  <script>
+    // 🔧 MODIFIEZ CETTE ADRESSE EMAIL 👇
+    const EMAIL_DESTINATION = "votre-email@exemple.com";
+    
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Récupération des valeurs du formulaire
+      const name = document.getElementById('name').value;
+      const prestation = document.getElementById('prestations').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+      
+      // Construction du sujet et du corps de l'email
+      const subject = `Nouveau contact: ${prestation}`;
+      const body = `Nom: ${name}
+Email: ${email}
+Téléphone: ${phone}
+Motif: ${prestation}
+
+Message:
+${message}`;
+      
+      // Création du lien mailto
+      const mailtoLink = `mailto:${EMAIL_DESTINATION}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Ouverture du client email
+      window.location.href = mailtoLink;
+    });
+  </script>
 
 </body>
 </html>
